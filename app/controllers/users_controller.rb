@@ -12,7 +12,7 @@ class UsersController < ApplicationController
             redirect_to "/users/#{user.id}"
         else 
             redirect_to '/register'
-            flash[:alert] = "Error, Fill in all fields"
+            flash[:alert] = user.errors.full_messages
         end 
     end
   
@@ -21,6 +21,6 @@ class UsersController < ApplicationController
 
     private 
     def user_params 
-        params.permit(:name, :email)
+        params.permit(:name, :email, :password, :password_confirmation)
     end
 end
