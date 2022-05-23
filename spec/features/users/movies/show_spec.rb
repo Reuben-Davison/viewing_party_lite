@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Move detail page' do
+RSpec.describe 'Movie detail page' do
   before(:each) do
     @user = User.create!(name: 'Chris', email: 'chris@gmail.com')
     visit "/users/#{@user.id}/movies/862"
