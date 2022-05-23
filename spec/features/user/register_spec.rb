@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "register page" do 
     it  'has a page to register' do 
-
+        create_list(:user, 5)
         visit '/register'
         
         fill_in "name",	with: "Rupert" 

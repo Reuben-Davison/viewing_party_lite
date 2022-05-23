@@ -19,6 +19,9 @@ class UsersController < ApplicationController
     def discover
     end
 
+    def login_form
+    end
+
     private 
     def user_params 
         params.permit(:name, :email, :password, :password_confirmation)

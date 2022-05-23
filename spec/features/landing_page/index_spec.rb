@@ -29,4 +29,11 @@ RSpec.describe 'Landing Page' do
     expect(current_path).to eq('/')
   end
 
+  it 'has a log in link' do 
+    user = create(:user)
+    visit '/'
+    click_on 'Log in'
+    expect(current_path).to eq('/login')
+  end
+
 end

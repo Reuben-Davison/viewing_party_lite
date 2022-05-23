@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get '/movies/top_movies', to: 'movies#top_movies'
   get '/movies/search_results', to: 'movies#search_results'
 
+  get '/login', to:'users#login_form'
+
 end
