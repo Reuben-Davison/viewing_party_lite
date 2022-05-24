@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get '/movies/search_results', to: 'movies#search_results'
 
   get '/login', to:'users#login_form'
+  post '/login', to:'users#login_user'
 
 end
