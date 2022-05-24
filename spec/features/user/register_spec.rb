@@ -10,7 +10,7 @@ RSpec.describe "register page" do
         fill_in "password",	with: "password1" 
         fill_in "password_confirmation",	with: "password1" 
         click_button 'Register'
-        rup = User.first
+        rup = User.last
         expect(current_path).to eq("/users/#{rup.id}")
         expect(page).to have_content("Rupert's Dashboard")
     end

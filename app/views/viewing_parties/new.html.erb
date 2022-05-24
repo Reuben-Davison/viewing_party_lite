@@ -1,6 +1,6 @@
 <h1>New Viewing Party</h1>
 <h3> <%= @movie.movie_details[:title] %></h3>
-<%= form_with url: "users/#{@user.id}/movies/#{@movie.movie_details[:id]}/viewing-party/new", local: true do |f| %>
+<%= form_with url: "users/#{@user.id}/movies/#{@movie.movie_details[:id]}/viewing-party", method: :post, local: true do |f| %>
 <%= f.number_field :duration, in: "#{@movie.movie_details[:runtime]}".to_i .. 1000, value: "#{@movie.movie_details[:runtime]}" %>
 <%= f.date_field :when %>
 <%= f.time_field :start %>
