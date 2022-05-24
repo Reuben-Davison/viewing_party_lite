@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Creating a viewing party' do
     it 'has a button to create a viewing party' do
-        @user = User.create!(name: 'Chris', email: 'chris@gmail.com')
-        @user1 = User.create!(name: 'Rod', email: 'rod@gmail.com')
-        @user3 = User.create!(name: 'Frank', email: 'frink@gmail.com')
-        @user4 = User.create!(name: 'Sue', email: 'sue@gmail.com')
+        @user = User.create!(name: 'Chris', email: 'chris@gmail.com', password: "test", password_confirmation: "test")
+        @user1 = User.create!(name: 'Rod', email: 'rod@gmail.com', password: "test", password_confirmation: "test")
+        @user3 = User.create!(name: 'Frank', email: 'frink@gmail.com', password: "test", password_confirmation: "test")
+        @user4 = User.create!(name: 'Sue', email: 'sue@gmail.com', password: "test", password_confirmation: "test")
         visit "/users/#{@user.id}/movies/862/viewing-party/new"
         @movie = MovieFacade.new(862)
         save_and_open_page
@@ -20,10 +20,10 @@ RSpec.describe 'Creating a viewing party' do
     end 
 
     xit 'also adds viewing party to all attendees' do 
-        @user = User.create!(name: 'Chris', email: 'chris@gmail.com')
-        @user1 = User.create!(name: 'Rod', email: 'rod@gmail.com')
-        @user3 = User.create!(name: 'Frank', email: 'frink@gmail.com')
-        @user4 = User.create!(name: 'Sue', email: 'sue@gmail.com')
+        @user = User.create!(name: 'Chris', email: 'chris@gmail.com', password: "test", password_confirmation: "test")
+        @user1 = User.create!(name: 'Rod', email: 'rod@gmail.com', password: "test", password_confirmation: "test")
+        @user3 = User.create!(name: 'Frank', email: 'frink@gmail.com', password: "test", password_confirmation: "test")
+        @user4 = User.create!(name: 'Sue', email: 'sue@gmail.com', password: "test", password_confirmation: "test")
         visit "/users/#{@user.id}/movies/862/viewing-party/new"
         @movie = MovieFacade.new(862)
         expect(page).to have_content(@movie.movie_details[:results][:original_title])

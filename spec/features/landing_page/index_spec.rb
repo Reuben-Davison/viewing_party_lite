@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Landing Page' do
   it 'displays the application title, new user button, users and landing page link' do
-    user_1 = User.create!(name: 'Charles', email:'charlie@gmail.com')
-    user_2 = User.create!(name: 'Sally', email:'sally@gmail.com')
+    user_1 = User.create!(name: 'Charles', email:'charlie@gmail.com', password: "test", password_confirmation: "test")
+    user_2 = User.create!(name: 'Sally', email:'sally@gmail.com', password: "test", password_confirmation: "test")
 
     visit '/'
     expect(page).to have_content('Viewing Party Lite')

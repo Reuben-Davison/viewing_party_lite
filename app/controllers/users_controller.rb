@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     def login_user 
         user = User.find_by(email: params[:email])
         if user && user.authenticate(params[:password])
-            redirect_to "users/#{user.id}/discover"
+            redirect_to "/users/#{user.id}/discover"
         else 
           flash[:alert] = "Invalid username or password"
            redirect_to '/login'
