@@ -9,7 +9,7 @@ RSpec.describe 'Search Results page ' do
         fill_in 'password', with: 'test'
         click_button 'Login'
 
-        visit "/dashboard/discover"
+        visit "/discover"
         fill_in "search",	with: "Batman"
         click_button 'Search'
         expect(current_path).to eq('/movies/search_results')
@@ -24,7 +24,7 @@ RSpec.describe 'Search Results page ' do
         fill_in 'password', with: 'test'
         click_button 'Login'
 
-        visit "/dashboard/discover"
+        visit "/discover"
         fill_in "search",	with: "Mad Max"
         click_button 'Search'
         expect(current_path).to eq('/movies/search_results')
