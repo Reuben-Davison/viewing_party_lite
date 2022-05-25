@@ -1,7 +1,7 @@
 
-<%= button_to 'Create Viewing Party', "/users/#{@user.id}/movies/#{@movie_id}/viewing-party/new?user_id=#{@user.id}", params: { user_id: "#{@user.id}"}, method: :get, local: true %>
+<%= button_to 'Create Viewing Party', "/movies/#{@movie_id}/viewing-party/new?user_id=#{@user.id}", params: { user_id: "#{@user.id}"}, method: :get, local: true %>
 
-<%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get, local: true %>
+<%= button_to 'Discover Page', "/discover", method: :get, local: true %>
 
 <% if @movie.movie_details %>
 <p>Title: <%=  @movie.movie_details[:title]%></p>

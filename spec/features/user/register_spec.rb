@@ -11,7 +11,7 @@ RSpec.describe "register page" do
         fill_in "password_confirmation",	with: "password1" 
         click_button 'Register'
         rup = User.last
-        expect(current_path).to eq("/users/#{rup.id}")
+        expect(current_path).to eq("/dashboard")
         expect(page).to have_content("Rupert's Dashboard")
     end
     it  'sad path test for misspelling a confirmation password' do 

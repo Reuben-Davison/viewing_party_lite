@@ -1,7 +1,5 @@
-<%= binding.pry %>
 <h1><%= current_user.name %>'s Dashboard</h1>
-
-<%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
+<%= button_to 'Discover Movies', "/discover", method: :get %>
 
 <div id='parties'> 
 <h2>Viewing Parties</h2>

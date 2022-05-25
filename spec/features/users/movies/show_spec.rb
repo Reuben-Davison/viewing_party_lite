@@ -2,13 +2,19 @@ require 'rails_helper'
 
 RSpec.describe 'Movie detail page' do
   before(:each) do
-    @user = User.create!(name: 'Chris', email: 'chris@gmail.com', password: "test", password_confirmation: "test")
-    visit "/users/#{@user.id}/movies/862"
+        visit '/register'
+        
+        fill_in "name",	with: "Rupert" 
+        fill_in "email",	with: "rupert@gmail.com" 
+        fill_in "password",	with: "password1" 
+        fill_in "password_confirmation",	with: "password1"
+        click_button 'Register'
+        visit "/movies/862"
   end
 
 it 'has a button to create a viewing party' do
   click_button 'Create Viewing Party'
-  expect(current_path).to eq("/users/#{@user.id}/movies/862/viewing-party/new")
+  expect(current_path).to eq("/movies/862/viewing-party/new")
 end
   it 'displays movie details' do
     expect(page).to have_content('Toy Story')
@@ -49,6 +55,6 @@ end
   end
   it 'has a button to the discover page' do
     click_button 'Discover Page'
-    expect(current_path).to eq("/users/#{@user.id}/discover")
+    expect(current_path).to eq("/discover")
   end
 end
