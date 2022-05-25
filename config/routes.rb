@@ -18,5 +18,6 @@ Rails.application.routes.draw do
 
   get '/login', to:'users#login_form'
   post '/login', to:'users#login_user'
+  delete '/session', to: 'session#delete'
 
 end

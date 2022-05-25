@@ -1,14 +1,15 @@
-<%= button_to 'Create New User', '/register', method: :get, local: true %>
-<%= button_to 'Log in', '/login', method: :get, local: true %>
-
 <h1 style= "text-align: center">Viewing Party Lite</h1>
+<% if session[:user_id]  %>
+      <%= button_to 'Log out', '/session', method: :delete, local: true %>
 
-<h2 style= "text-align: center" >Existing Users:</h2>
+      <h2 style= "text-align: center" >Existing Users:</h2>
 
-<% @users.each do |user| %>
-
-<div id="user-<%= user.id%>">
-  <p style= "text-align: center"><%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %></p>
-</div>
-
-<% end %>
+      <% @users.each do |user| %>
+        <div id="user-<%= user.id%>">
+          <p style= "text-align: center"><%= user.email%></p>
+        </div>
+      <% end %>
+<% else %>
+  <%= button_to 'Create New User', '/register', method: :get, local: true %>
+  <%= button_to 'Log in', '/login', method: :get, local: true %>
+<% end  %>
