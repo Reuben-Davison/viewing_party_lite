@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "user show page" do 
     it  'has a users dashboard' do 
-        user = User.create!(name: "will", email: "will@g.com", password: "test", password_confirmation: "test")
+        User.create!(name: "will", email: "will@g.com", password: "test", password_confirmation: "test")
         visit '/'
         click_button 'Log in'
         fill_in 'email', with: 'will@g.com'

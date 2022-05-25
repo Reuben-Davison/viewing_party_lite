@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Search Results page ' do 
    it 'returns the search results of a single word search' do 
-        user = User.create!(name: "will", email: "will@g.com", password: "test", password_confirmation: "test")
+        User.create!(name: "will", email: "will@g.com", password: "test", password_confirmation: "test")
         visit '/'
         click_button 'Log in'
         fill_in 'email', with: 'will@g.com'
@@ -17,7 +17,7 @@ RSpec.describe 'Search Results page ' do
    end
 
    it 'returns the results from a multi word search' do 
-        user = User.create!(name: "will", email: "will@g.com", password: "test", password_confirmation: "test")
+        User.create!(name: "will", email: "will@g.com", password: "test", password_confirmation: "test")
         visit '/'
         click_button 'Log in'
         fill_in 'email', with: 'will@g.com'

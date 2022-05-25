@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'discover page' do
     it 'has a top rated movies link' do
-        user = User.create!(name: "will", email: "will@g.com", password: "test", password_confirmation: "test")
+        User.create!(name: "will", email: "will@g.com", password: "test", password_confirmation: "test")
         visit "/discover"
         click_button 'Top Movies'
         expect(current_path).to eq('/movies/top_movies')
