@@ -56,4 +56,18 @@ RSpec.describe 'Landing Page' do
 
   end
 
+  it  'visitors do not see other users email' do 
+    User.create!(name: 'Charles', email:'charlie@gmail.com', password: "test", password_confirmation: "test")
+
+    visit '/'
+    expect(page).to_not have_content("charlie@gmail.com")
+  end
+
+  it 'visitor can not go to a dashboard until they log in' do 
+    visit '/'
+    visit '/dashboard'
+    expect(current_path).to eq('/')
+    expect(page).to have_content('You must log in')
+  end
+
 end

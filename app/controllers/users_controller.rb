@@ -3,7 +3,10 @@ class UsersController < ApplicationController
     end
 
     def show
-  
+        if session[:user_id] == nil 
+            redirect_to '/'
+            flash[:alert] = "You must log in"
+        end
     end
 
     def create 
